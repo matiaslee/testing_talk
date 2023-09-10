@@ -7,7 +7,7 @@ run_integration_tests:
 	python tests/populate_test_db.py
 	pytest -m integration_test -vv
 	rm database_test.sqlite
-	unset -f ENVIROMENT
+	unset ENVIROMENT
 
 
 run_end2end_tests:
@@ -15,4 +15,4 @@ run_end2end_tests:
 	python tests/populate_test_db.py
 	pytest -m end2end_test -vv
 	rm database_test.sqlite
-	unset -f ENVIROMENT
+	unset ENVIROMENT

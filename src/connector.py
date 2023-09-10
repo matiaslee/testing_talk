@@ -12,3 +12,6 @@ class DolarBlueConnector():
         json_data = requests.get(self.url).json()
         price = json_data['blue']['value_avg']
         return price
+
+    def get_price_with_ipdb(self) -> float:
+        pass
