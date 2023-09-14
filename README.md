@@ -1,4 +1,11 @@
-# Testing talk 2023
+# Testing talk
+
+## Version of the talk for a class software engeenering at Famaf (August 2023):
+
+Here are the [slides](https://docs.google.com/presentation/d/1oCjRJ4LLSHKKOrSS4IokoVvO-1m23chiaZIuaTCbESA/edit?usp=sharing).
+
+
+## Version of the talk for a Python Event in Córdoba Argentina (June 2023):
 
 This repo stores the code used for [a talk about testing in a python](https://www.meetup.com/es-ES/buenos-aires-python-meetup/events/293425518/) event in my city. I will also use them as teaching material for a Software Engineer class at [FaMAF](https://www.famaf.unc.edu.ar/).
 
