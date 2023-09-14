@@ -14,4 +14,16 @@ class DolarBlueConnector():
         return price
 
     def get_price_with_ipdb(self) -> float:
+
+        # How to play with ipdb and testing :)
+        # 1 - uncomment two lines at the bottom
+        # 2 - run the following command `pytest -k test_get_price_with_ipdb -s`
+        # (-k) to run a particular test.
+        # (-s) is needed to allow interaction
+        # 3 - write the body of this function as you want
+        # 4 - update test `test_get_price_with_ipdb` accordly
+
+        # import ipdb
+        # ipdb.set_trace()
+
         pass

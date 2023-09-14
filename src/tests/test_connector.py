@@ -60,3 +60,9 @@ def test_get_price_with_timeout(
 
     with pytest.raises(Timeout):
         dolar_blue_connector.get_price()
+
+def test_get_price_with_ipdb(
+    dolar_blue_connector: DolarBlueConnector
+):
+    """ auxiliar test to show how to use ipdb for developing """
+    assert dolar_blue_connector.get_price_with_ipdb() is None
