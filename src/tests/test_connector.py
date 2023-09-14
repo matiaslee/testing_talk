@@ -61,6 +61,7 @@ def test_get_price_with_timeout(
     with pytest.raises(Timeout):
         dolar_blue_connector.get_price()
 
+
 def test_get_price_with_ipdb(
     dolar_blue_connector: DolarBlueConnector
 ):
