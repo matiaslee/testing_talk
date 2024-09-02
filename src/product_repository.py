@@ -1,30 +1,47 @@
-from models import Product
-from pony.orm import db_session
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.exc import NoResultFound
+from models import Product, engine
 from typing import List
+
+# Crea una sesión
+Session = sessionmaker(bind=engine)
 
 
 class ProductRepository:
 
-    @db_session
     def create_product(self, name, price):
-        Product(name=name, price=price)
+        session = Session()
+        try:
+            product = Product(name=name, price=price)
+            session.add(product)
+            session.commit()
+        finally:
+            session.close()
 
-    @db_session
     def get_product(self, product_id: int) -> dict:
-        product = Product.get(id=product_id)
-        if product is None:
+        session = Session()
+        try:
+            product = session.query(Product).filter(Product.id == product_id).one()
+            return {'id': product.id, 'name': product.name, 'price': product.price}
+        except NoResultFound:
             raise ValueError("Product does not exist")
-        return {'id': product.id, 'name': product.name, 'price': product.price}
+        finally:
+            session.close()
 
-    @db_session
     def get_products(self) -> List[dict]:
-        products = [
-            {'id': product.id, 'name': product.name, 'price': product.price}
-            for product in Product.select()
-        ]
-        return products
+        session = Session()
+        try:
+            products = session.query(Product).all()
+            return [{'id': product.id, 'name': product.name, 'price': product.price} for product in products]
+        finally:
+            session.close()
 
-    @db_session
     def update_all_prices(self, factor):
-        for p in Product.select():
-            p.price = p.price * factor
+        session = Session()
+        try:
+            products = session.query(Product).all()
+            for product in products:
+                product.price *= factor
+            session.commit()
+        finally:
+            session.close()

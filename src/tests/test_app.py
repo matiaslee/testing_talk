@@ -65,9 +65,13 @@ def test_get_products_using_wrong_type():
 
     expected_json = {
         'detail': [
-            {'loc': ['path', 'product_id'],
-             'msg': 'value is not a valid integer',
-             'type': 'type_error.integer'}
+            {
+                'input': 'i_am_not_a_number',
+                'loc': ['path', 'product_id'],
+                'msg': 'Input should be a valid integer, unable to parse '
+                'string as an integer',
+                'type': 'int_parsing'
+            }
         ]
     }
     assert response.json() == expected_json
