@@ -14,9 +14,9 @@ Then you can start the app. For example:
 
 ```
 $ cd src
-.../src/ $ export ENVIRONMENT="production"
-.../src/ $ export PYTHONPATH="/home/lee/projects/testing_talk/src/"
-.../src/ $ uvicorn app:app --reload
+.../src$ export ENVIRONMENT="production"
+.../src$ export PYTHONPATH="/home/lee/projects/testing_talk/src/"
+.../src$ uvicorn app:app --reload
 ```
 
 Possible values of ENVIRONMENT are `production`, `test` or `development`.
@@ -38,10 +38,9 @@ $ make run_integration_tests
 ```
 
 To run end to end test, first you have to up the app with `ENVIRONMENT="test"
-and then run:
+and then run (internet connection is needed to run these tests):
 
 ```
 $ make run_end2end_tests
 ```
 
-You need internet connection to run these tests.

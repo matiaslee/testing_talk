@@ -1,5 +1,7 @@
-from settings import DOLAR_BLUE_URL
 import requests
+
+
+DOLAR_BLUE_URL = 'https://api.bluelytics.com.ar/v2/latest'
 
 
 class DolarBlueConnector():
