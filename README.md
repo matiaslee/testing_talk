@@ -1,9 +1,11 @@
 # Testing talk
 
-## Version of the talk for a class of software engineering at Famaf (August 2023):
+## Version of the talk for a class of software engineering at Famaf (August 2023 and September 2024):
 
 Here are the [slides](https://docs.google.com/presentation/d/1oCjRJ4LLSHKKOrSS4IokoVvO-1m23chiaZIuaTCbESA/edit?usp=sharing).
 
+
+[Here is a poll]() to know better my student and to discuss a little about situation in Argentina. 
 
 ## Version of the talk for a Python Event in Córdoba Argentina (June 2023):
 
