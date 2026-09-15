@@ -38,11 +38,11 @@ def update_products_price(factor: float):
 
 @app.get('/products_with_usd_prices/{product_id}')
 def get_product_with_usd_price(product_id: int):
-    repo = ProductWithDollarBluePrices(
+    service = ProductWithDollarBluePrices(
         ProductRepository(), DolarBlueConnector()
     )
     try:
-        return repo.get_product(product_id)
+        return service.get_product(product_id)
     except ValueError:
         raise HTTPException(status_code=404, detail='Product not found')
     except Timeout:
@@ -51,11 +51,11 @@ def get_product_with_usd_price(product_id: int):
 
 @app.get('/products_with_usd_prices/')
 def get_products_with_usd_price():
-    repo = ProductWithDollarBluePrices(
+    service = ProductWithDollarBluePrices(
         ProductRepository(), DolarBlueConnector()
     )
     try:
-        return repo.get_products()
+        return service.get_products()
     except Timeout:
         HTTPException(status_code=504, detail='Timeout...')
 

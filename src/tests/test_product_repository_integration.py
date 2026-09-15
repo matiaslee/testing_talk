@@ -6,9 +6,11 @@ from models import Product, engine
 # Configuración de la sesión
 Session = sessionmaker(bind=engine)
 
+
 @pytest.fixture
 def product_repository():
     return ProductRepository()
+
 
 @pytest.mark.integration_test
 def test_get_products(product_repository: ProductRepository):
@@ -19,6 +21,7 @@ def test_get_products(product_repository: ProductRepository):
         assert len(list_of_products) == N_products
     finally:
         session.close()
+
 
 @pytest.mark.integration_test
 def test_create_product(product_repository: ProductRepository):
